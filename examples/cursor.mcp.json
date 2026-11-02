@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "felku-connect": {
+      "url": "https://mcp.felku.com.br/mcp",
+      "headers": { "Authorization": "Bearer ${env:FELKU_CONNECT_KEY}" }
+    }
+  }
+}
