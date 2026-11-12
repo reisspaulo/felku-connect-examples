@@ -64,15 +64,22 @@ All clients, including Hermes: [Connect your agent](https://mcp.felku.com.br/en/
 
 ## Chat history (optional)
 
-Off by default. You turn it on per connection in the dashboard, after reading a short notice:
+Off by default. You turn it on per WhatsApp connection, on the connection screen in the dashboard, after reading and
+accepting a notice.
 
-- **Turned on before you pair:** WhatsApp sends a first batch of recent one-to-one chats right after pairing.
-- **Turned on later:** history starts from that moment; older messages don't come.
-- **Contact added later** (with history on since pairing): Felku fetches that chat's recent messages, up to your account's limit, while your phone is online.
+- **Turned on before you pair the number:** WhatsApp sends your recent chats once, in the first minutes after pairing.
+- **Contact added later:** Felku fetches that chat's recent history from your phone, if it is on, up to a limit per
+  contact.
+- **Older messages:** your agent can ask for older messages of a chat on your list, in limited batches. This works only
+  if history was turned on before you paired.
+- **Turned on after you pair:** no older message is imported; only what arrives from then on.
 
-Only one-to-one chats with contacts on your list; groups are not included. History is kept for your plan's retention
-period, like any received message. Turning it off, or removing a contact from the list, deletes it right away.
-See the [Privacy Policy](PRIVACY_LINK_TBD).
+Only text from one-to-one chats with contacts on your list, and only messages still within your plan's retention
+period. Groups, broadcast lists and channels are left out; images, audio and documents are not stored. Your agent reads
+history for reference; it is not treated as a new message. Turning it off, removing the contact from the list or
+disconnecting the number deletes it right away. The people in those chats are not notified. Felku may pause the import:
+while paused, nothing new comes in, and what was already imported stays until the retention period ends or you turn it
+off. Details in the [Privacy Policy](https://mcp.felku.com.br/en/privacidade/).
 
 ## Not available yet
 
