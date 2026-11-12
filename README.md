@@ -1,4 +1,4 @@
-# Felku Connect: examples
+# Felku Connect: hosted WhatsApp MCP (client config examples)
 
 Configuration examples for [Felku Connect](https://mcp.felku.com.br/), a hosted MCP server that connects your AI agent
 to WhatsApp and Telegram, so it can read and reply in the chats you allow. This repository holds only client configs;
