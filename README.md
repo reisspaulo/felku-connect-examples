@@ -16,14 +16,14 @@ Works with Claude.ai, Claude Code, Codex, Cursor, Hermes and any MCP client that
 
 ## Security
 
-1. Limits live on the server, not in the agent: pacing, hourly and daily caps (lower on a new connection), a cap of 3 first messages a day to people who never wrote to the number, and an automatic pause when drops, send failures or restriction warnings pile up. Only a person resumes a paused connection.
+1. Limits live on the server, not in the agent: pacing, hourly and daily caps (lower on a new connection), a cap of up to 3 first messages a day to people who never wrote to the number, and an automatic pause when drops, send failures or restriction warnings pile up. Only a person resumes a paused connection.
 2. The agent only reads and replies to the contacts on your list; messages from anyone else are dropped on arrival and every send outside the list is denied. A WhatsApp group is not on that list: the agent can read it only after you approve it in the dashboard.
-3. Keys can be read-only or limited to specific permissions (new keys start with read only). High-risk actions are off by default; actions on groups, communities and channels need a permission you add on purpose and your approval in the dashboard.
+3. Keys can be read-only or limited to specific permissions (new keys start with read only). High-risk actions come switched off and need a specific key permission; every send or action in a WhatsApp group, community or channel also needs your approval in the dashboard. Ordinary sends to contacts on your list go out directly, within the limits.
 4. Messages reach the agent marked as untrusted data. That lowers prompt-injection risk, it does not remove it: set your agent to treat messages as content, never as instructions.
 5. When your agent reads a chat, the text goes to the AI provider the agent uses (Anthropic, OpenAI, Google...), under that provider's rules.
 6. You are responsible for the third-party data your agent reads (contacts and groups), including under LGPD/GDPR.
 
-**Unofficial WhatsApp connection.** Felku connects to WhatsApp the way WhatsApp Web does, as a linked device, using the open-source Baileys library. It is not the official WhatsApp Business Platform, and Felku is not affiliated with or endorsed by WhatsApp, Meta or Telegram. Automated use of a personal account may go against WhatsApp's Terms of Service: WhatsApp can temporarily or permanently ban the number. The server-side limits lower that risk; they do not remove it. Use a dedicated number you can afford to lose. More in [Will my WhatsApp number get banned?](https://mcp.felku.com.br/guides/will-my-whatsapp-number-get-banned/). Telegram uses the official Bot API.
+**Unofficial WhatsApp connection.** Felku connects to WhatsApp the way WhatsApp Web does, as a linked device, using the open-source Baileys library. It is not the official WhatsApp Business Platform, and Felku is not affiliated with, sponsored or endorsed by WhatsApp, Meta, Telegram, Anthropic, OpenAI or Cursor. Automated use of a personal account may go against WhatsApp's Terms of Service: WhatsApp can temporarily or permanently ban the number. The server-side limits lower that risk; they do not remove it. Use a dedicated number you can afford to lose. More in [Will my WhatsApp number get banned?](https://mcp.felku.com.br/guides/will-my-whatsapp-number-get-banned/). Telegram uses the official Bot API.
 
 See [Security and risks](https://mcp.felku.com.br/en/seguranca/), the [Terms](https://mcp.felku.com.br/en/termos/) and the [Privacy Policy](https://mcp.felku.com.br/en/privacidade/).
 
@@ -44,8 +44,8 @@ export FELKU_CONNECT_KEY="fkc_YOUR_KEY"
 claude mcp add --transport http felku-connect https://mcp.felku.com.br/mcp \
   --header "Authorization: Bearer $FELKU_CONNECT_KEY"
 ```
-Without `--scope` this stays local to you in this project. Don't use `--scope user` (every project on your computer
-would get your WhatsApp). If you prefer a config file, [`examples/claude-code.mcp.json`](examples/claude-code.mcp.json)
+The shell expands `$FELKU_CONNECT_KEY`, so the key is stored in `~/.claude.json` (this project's entry), not in the
+project. Never use `--scope user`: every agent in every project would get your WhatsApp. If you prefer a config file, [`examples/claude-code.mcp.json`](examples/claude-code.mcp.json)
 reads the key from the `FELKU_CONNECT_KEY` environment variable.
 
 **Codex.**
@@ -77,5 +77,4 @@ messages that arrive after you connect.
 
 MIT for the files in this repository.
 
-WhatsApp is a trademark of WhatsApp LLC; Telegram is a trademark of Telegram FZ-LLC; Claude is a trademark of
-Anthropic; Codex is a trademark of OpenAI; Cursor is a trademark of its owner. All other names belong to their owners.
+WhatsApp, Telegram, Claude, Codex and Cursor are trademarks of their respective owners.
