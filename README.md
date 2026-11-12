@@ -62,10 +62,21 @@ codex mcp add felku-connect --url https://mcp.felku.com.br/mcp \
 
 All clients, including Hermes: [Connect your agent](https://mcp.felku.com.br/en/docs/agentes/).
 
+## Chat history (optional)
+
+Off by default. You turn it on per connection in the dashboard, after reading a short notice:
+
+- **Turned on before you pair:** WhatsApp sends a first batch of recent one-to-one chats right after pairing.
+- **Turned on later:** history starts from that moment; older messages don't come.
+- **Contact added later** (with history on since pairing): Felku fetches that chat's recent messages, up to your account's limit, while your phone is online.
+
+Only one-to-one chats with contacts on your list; groups are not included. History is kept for your plan's retention
+period, like any received message. Turning it off, or removing a contact from the list, deletes it right away.
+See the [Privacy Policy](PRIVACY_LINK_TBD).
+
 ## Not available yet
 
-Importing old chat history, fetching received media (images or documents) and transcribing audio. The agent works with
-messages that arrive after you connect.
+Fetching received media (images or documents) and transcribing audio.
 
 ## Docs
 
